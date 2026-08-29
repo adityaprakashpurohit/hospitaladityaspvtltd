@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-background text-text font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-medium py-3 px-6 rounded-md transition-colors duration-200 inline-flex items-center justify-center;
+  }
+  
+  .btn-secondary {
+    @apply bg-white hover:bg-background-soft text-primary border border-primary font-medium py-3 px-6 rounded-md transition-colors duration-200 inline-flex items-center justify-center;
+  }
+
+  .btn-emergency {
+    @apply bg-emergency hover:bg-red-800 text-white font-medium py-3 px-6 rounded-md transition-colors duration-200 inline-flex items-center justify-center shadow-md;
+  }
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
